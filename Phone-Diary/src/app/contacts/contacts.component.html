@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <table class="table">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Gender</th>
+            <th>DOB</th>
+            <th>Age</th>
+        </tr>
+        <tr *ngFor="let item of data; index as i">
+            <td>{{item.index}}</td>
+            <td [ngStyle]="item.gender=='male'? {color:'blue'} : {color:'pink'}">{{item.name}}</td>
+            <td>{{item.phone}}</td>
+            <td >{{item.gender}}</td>
+            <td>{{item.DOB | date: 'dd MMM YYYY'}}</td>
+            <td>{{item.age}}</td>
+            <td><a (click)="deleteRow(i)" class="text-danger">Delete</a></td>
+        </tr>
+    </table>
+</div>
